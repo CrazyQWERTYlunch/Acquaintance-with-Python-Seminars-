@@ -11,19 +11,19 @@
 # print(Sum_odd(list(map(int, input("Введите через пробел значения элементов списка: ").split()))))
 
 """Задача 2. Напишите программу, которая найдёт произведение пар чисел списка. Парой считаем первый и последний элемент, второй и предпоследний и т.д."""
-# import random
-# import math
-#
-# size = int(input("Введите желаемую длину списка: "))
-#
-# test_list = [random.randint(-100, 100) for i in range(size)]
-# new_list = [test_list[i] * test_list[- i - 1] for i in range(math.ceil(len(test_list)/2))]
-#
-# print(test_list)
-# print(new_list)
+import random
+import math
 
-# new_list = [round(i % 1, 2) for i in test_list if i % 1 != 0]
-# print(max(new_list) - min(new_list))
+size = int(input("Введите желаемую длину списка: "))
+
+test_list = [random.randint(-100, 100) for i in range(size)]
+new_list = [test_list[i] * test_list[- i - 1] for i in range(math.ceil(len(test_list)/2))]
+
+print(test_list)
+print(new_list)
+
+new_list = [round(i % 1, 2) for i in test_list if i % 1 != 0]
+print(max(new_list) - min(new_list))
 """Задача 3. Задайте список из вещественных чисел. Напишите программу, которая найдёт разницу между максимальным и минимальным значением дробной части элементов."""
 
 # test_list = list(map(float, input("Введите через пробел значения элементов списка: ").split()))
@@ -50,21 +50,21 @@
 
 """Задача 5. Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов."""
 
-
-n = int(input('Введите число: '))
-
-def fibonacci(n):
-    fibo_nums = []
-    a, b = 1, 1
-    for i in range(n-1):
-        fibo_nums.append(a)
-        a, b = b, a + b
-    a, b = 0, 1
-    for i in range (n):
-        fibo_nums.insert(0, a)
-        a, b = b, a - b
-    return fibo_nums
-
-
-fibo_nums = fibonacci(n)
-print(fibo_nums)
+#
+# n = int(input('Введите число: '))
+#
+# def fibonacci(n):
+#     fibo_nums = []
+#     a, b = 1, 1
+#     for i in range(n-1):
+#         fibo_nums.append(a)
+#         a, b = b, a + b
+#     a, b = 0, 1
+#     for i in range (n):
+#         fibo_nums.insert(0, a)
+#         a, b = b, a - b
+#     return fibo_nums
+#
+#
+# fibo_nums = fibonacci(n)
+# print(fibo_nums)

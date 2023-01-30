@@ -37,6 +37,8 @@
 #
 # print(unique_numbers(seqnum))
 
+"""Задача 4. Задана натуральная степень k. Сформировать случайным образом список коэффициентов (значения от 0 до 100) многочлена и
+записать в файл многочлен степени k."""
 #
 # import random
 # import itertools
@@ -63,8 +65,6 @@
 #
 # with open('К_4_заданию.txt', 'w') as file:
 #    file.write(polynomial)
-"""Задача 4. Задана натуральная степень k. Сформировать случайным образом список коэффициентов (значения от 0 до 100) многочлена и
-записать в файл многочлен степени k."""
 
 
 """Задача 5. Даны два файла, в каждом из которых находится запись многочлена. Задача - сформировать файл, содержащий сумму многочленов."""
@@ -88,13 +88,13 @@ file1 = 'Задание_5_poly1.txt'
 file2 = 'Задание_5_poly2.txt'
 
 def get_polynomial(k, ratios):
-   line = ['*x^'] * (k - 1) + ['*x']
-   polynomial = [[a, b, c] for a, b, c in itertools.zip_longest(ratios, line, range(k, 1, -1), fillvalue='') if a != 0]
-   for x in polynomial:
-      x.append(' + ')
-   polynomial = list(itertools.chain(*polynomial))
-   polynomial[-1] = ' = 0'
-   return "".join(map(str, polynomial)).replace(' 1*x', ' x')
+    line = ['*x^'] * (k - 1) + ['*x']
+    polynomial = [[a, b, c] for a, b, c in itertools.zip_longest(ratios, line, range(k, 1, -1), fillvalue='') if a != 0]
+    for x in polynomial:
+        x.append(' + ')
+    polynomial = list(itertools.chain(*polynomial))
+    polynomial[-1] = ' = 0'
+    return "".join(map(str, polynomial)).replace(' 1*x', ' x')
 
 def read_pol(file):
     with open(str(file), 'r') as data:
@@ -125,3 +125,5 @@ sum_pol = get_polynomial(len(sum_coef)-1, sum_coef)
 print('Итоговый результат сложения полиномов: ', sum_pol)
 with open('Задание_5_poly_sum.txt', 'w') as file_sum:
     file_sum.writelines(sum_pol)
+
+
